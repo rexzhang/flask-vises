@@ -1,0 +1,14 @@
+-r common.txt
+
+# sqlalchemy
+sqlalchemy
+
+# flask_redis
+redis
+
+# flask_celery
+celery>=4.0
+
+# flask_test
+flask_testing
+sqlalchemy_utils
