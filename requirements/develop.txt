@@ -1,7 +1,8 @@
 -r common.txt
 
-# sqlalchemy
-sqlalchemy
+# database
+psycopg2-binary
+Flask-SQLAlchemy
 
 # flask_redis
 redis
@@ -9,6 +10,6 @@ redis
 # flask_celery
 celery>=4.0
 
-# flask_test
-flask_testing
-sqlalchemy_utils
+# flask_testing
+Flask-Testing
+SQLAlchemy-Utils
