@@ -11,7 +11,11 @@ def configure_db(app, db, enable_migrate=True):
         if sqlalchemy_database is None:
             raise Exception('app.config missing SQLALCHEMY_DATABASE or SQLALCHEMY_DATABASE_URI')
 
-        if set(list(['ENGINE', 'NAME', 'USER'])).issubset(set(sqlalchemy_database.keys())) is None:
+        if (
+                sqlalchemy_database.get('ENGINE') is None or
+                sqlalchemy_database.get('NAME') is None or
+                sqlalchemy_database.get('USER') is None
+        ):
             raise Exception('SQLALCHEMY_DATABASE missing key: ENGINE/NAME/USER')
 
         app.config.update({'SQLALCHEMY_DATABASE_URI': '{}://{}{}@{}{}/{}?client_encoding=utf8'.format(
