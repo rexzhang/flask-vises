@@ -3,6 +3,7 @@
 # database
 psycopg2-binary
 Flask-SQLAlchemy
+Flask-Migrate
 
 # flask_redis
 redis
