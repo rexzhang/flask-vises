@@ -4,22 +4,22 @@
 
 import flask
 
-from example.models import GeneralOption
+from example.models import GeneralObject
 
 home_page = flask.Blueprint('views', __name__)
 
 
 @home_page.route('/')
 def home():
-    value = GeneralOption.get_value(group='home', value=1)
+    value = GeneralObject.get_value(group='home')
     return '{}'.format(value)
 
 
 @home_page.route('/add')
 def home_add():
-    value = GeneralOption.get_value(group='home')
+    value = GeneralObject.get_value(group='home')
     if value is None:
         value = 1
 
-    GeneralOption.set_value(group='home', value=value + 1)
+    GeneralObject.set_value(group='home', value=value + 1)
     return '{}'.format(value)
