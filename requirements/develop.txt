@@ -14,3 +14,6 @@ celery>=4.0
 # flask_testing
 Flask-Testing
 SQLAlchemy-Utils
+
+# PYPI
+twine

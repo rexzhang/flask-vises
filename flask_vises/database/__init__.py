@@ -2,10 +2,13 @@
 # coding=utf-8
 
 
+from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
+db = SQLAlchemy()
 
-def configure_db(app, db, enable_migrate=True):
+
+def configure_db(app, enable_migrate=True):
     if app.config.get('SQLALCHEMY_DATABASE_URI') is None:
         sqlalchemy_database = app.config.get('SQLALCHEMY_DATABASE')
         if sqlalchemy_database is None:
